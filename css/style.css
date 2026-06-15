@@ -386,14 +386,14 @@ figcaption {
 }
 
 .carrossel-card.is-prev {
-    transform: translateX(-190px) scale(0.84) rotate(-2deg);
+    transform: translateX(-235px) scale(0.84) rotate(-2deg);
     opacity: .2;
     filter: blur(0.5px);
     z-index: 1;
 }
 
 .carrossel-card.is-next {
-    transform: translateX(190px) scale(0.84) rotate(2deg);
+    transform: translateX(235px) scale(0.84) rotate(2deg);
     opacity: .2;
     filter: blur(0.5px);
     z-index: 1;
@@ -696,4 +696,104 @@ figcaption {
     .btn-add-cart-desktop {
         display: flex;
     }
+}
+
+/* Modal Overlay */
+
+.modal-overlay {
+    position: fixed;
+    display: flex;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease;
+}
+
+@media(min-width: 992px) {
+    .modal-overlay {
+        display: none;
+    }
+}
+
+.modal-overlay.is-open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-menu {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #251C1C;
+    width: 100%;
+    height: 40vh;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.modal-menu.is-open {
+    transform: translateX(0);
+}
+
+.modal-close {
+    background: none;
+    outline: none;
+    border: none;
+}
+
+#icon-close {
+    color: #FFFFFF;
+    height: 24px;
+
+}
+
+#header-modal-overlay {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 4%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6)
+}
+
+#modal-overlay-nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal-overlay-nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+#modal-overlay-nav ul li a {
+    font-family: 'Helvetica-Neue';
+    font-size: 14px;
+    color: #FFFFFF;
+    position: relative;
+}
+
+#modal-overlay-nav li a::before {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    background-color: #FFFFFF;
+    transform-origin: center;
+    transition-timing-function: ease-in-out;
+    transform: scaleX(0);
+    transition: .3s ease;
+}
+
+#modal-overlay-nav li a:hover::before {
+    transform: scaleX(1);
 }

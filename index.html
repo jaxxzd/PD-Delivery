@@ -57,7 +57,7 @@
 
             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" color="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"
-                class="icon icon-tabler icons-tabler-outline icon-tabler-menu-deep">
+                class="icon icon-tabler icons-tabler-outline icon-tabler-menu-deep" id="btnMenu">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M4 2h26" />
                 <path d="M7 10h23" />
@@ -65,6 +65,29 @@
             </svg>
         </nav>
     </header>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-menu" id="modalMenu" inert>
+            <div id="header-modal-overlay">
+                <figure>
+                    <img src="Images/logo-PD-Delivery.png" alt="Logo do PD Delivery" id="logo-header-delivery">
+                    <figcaption>Logo do PD Delivery</figcaption>
+                </figure>
+
+                <button class="modal-close" id="modalClose" aria-label="Fechar menu">
+                    <i data-lucide="x" id="icon-close"></i>
+                </button>
+            </div>
+
+            <nav id="modal-overlay-nav">
+                <ul>
+                    <li><a href="index.html">INÍCIO</a></li>
+                    <li><a href="html/menu.html">CARDÁPIO</a></li>
+                    <li><a href="html/login.html">FAZER LOGIN</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 
     <main id="main-delivery">
         <section id="section-carrossel-delivery">
@@ -127,7 +150,8 @@
                             <div class="carrossel-card-content">
                                 <div class="container-name-title-delivery">
                                     <p class="name-product-delivery">Sundae Supremo</p>
-                                    <h2 class="title-cta-product-delivery">Irresistível, o sundae supremo que encanta!</h2>
+                                    <h2 class="title-cta-product-delivery">Irresistível, o sundae supremo que encanta!
+                                    </h2>
                                 </div>
                                 <p class="price-product-delivery">R$ 19,90</p>
                                 <p class="desc-product-delivery">Sorvete cremoso com calda de chocolate e
@@ -150,8 +174,6 @@
 
 <script src="js/lucide-icons.js"></script>
 <script src="js/cardHeroSection.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
 
 </html>
