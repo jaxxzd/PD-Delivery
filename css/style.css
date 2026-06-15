@@ -297,7 +297,7 @@ figcaption {
     background-image: url(/Images/background-hero-section.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-attachment: scroll;
     display: flex;
     justify-content: center;
@@ -339,26 +339,19 @@ figcaption {
     justify-content: center;
     align-items: center;
     overflow-x: visible;
+    width: 100%;
 }
 
 .carrossel-cards {
+    position: relative;
     display: flex;
-    gap: 12px;
+    justify-content: center;
+    align-items: center;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 20px 0;
-}
-
-@media(min-width: 992px) {
-    .carrossel-cards {
-        display: flex;
-        gap: 12px;
-        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        padding: 20px 0;
-    }
 }
 
 .carrossel-card {
-    flex: 0 0 240px;
+    position: absolute;
     width: 240px;
     height: 160px;
     display: flex;
@@ -370,32 +363,53 @@ figcaption {
     transition: all 0.3s ease;
     box-shadow: inset 0px 0px 2px 0px rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(40px);
-    position: relative;
+    transition:
+        transform 1s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+        filter 0.55s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media(min-width: 992px) {
     .carrossel-card {
-        flex: 0 0 650px;
+        width: 650px;
         height: 350px;
         padding: 12px;
     }
 }
 
-.carrossel-card.active {
-    filter: blur(0);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-    background: #FFFFFF;
+.carrossel-card.is-active {
+    transform: translateX(0) scale(1) rotate(0deg);
+    opacity: 1;
+    filter: none;
+    z-index: 2;
+    cursor: default;
 }
 
-.carrossel-card:not(.active) {
-    opacity: 0.2;
-    transform: scale(0.92);
-    cursor: pointer;
-    rotate: 2deg;
+.carrossel-card.is-prev {
+    transform: translateX(-190px) scale(0.84) rotate(-2deg);
+    opacity: .2;
+    filter: blur(0.5px);
+    z-index: 1;
 }
 
-.carrossel-card:not(.active):hover {
-    transform: scale(0.94);
+.carrossel-card.is-next {
+    transform: translateX(190px) scale(0.84) rotate(2deg);
+    opacity: .2;
+    filter: blur(0.5px);
+    z-index: 1;
+}
+
+@media (min-width: 992px) {
+
+    .carrossel-card.is-prev {
+        transform: translateX(-620px) scale(0.84) rotate(-2deg);
+        cursor: pointer;
+    }
+
+    .carrossel-card.is-next {
+        transform: translateX(620px) scale(0.84) rotate(2deg);
+        cursor: pointer;
+    }
 }
 
 .card-image {
@@ -539,19 +553,10 @@ figcaption {
 
 @media(min-width: 992px) {
     .title-cta-product-delivery {
-        width: 90%;
-        font-family: 'Red Rose', serif;
-        font-weight: 330;
-        font-size: 36px;
-        color: #FFFFFF;
-        text-align: center;
-    }
-
-    .carrossel-card:nth-child(3) .title-cta-product-delivery {
         width: 80%;
         font-family: 'Red Rose', serif;
         font-weight: 330;
-        font-size: 36px;
+        font-size: 30px;
         color: #FFFFFF;
         text-align: center;
     }
