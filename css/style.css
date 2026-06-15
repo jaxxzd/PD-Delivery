@@ -662,7 +662,7 @@ figcaption {
 }
 
 .btn-add-cart-desktop {
-    width: 60%;
+    padding: 12px;
     height: 40px;
     border-radius: 5px;
     display: flex;
