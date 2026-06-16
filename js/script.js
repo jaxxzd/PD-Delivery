@@ -1,5 +1,6 @@
-// Modal Overlay
 document.addEventListener('DOMContentLoaded', () => {
+
+    // Modal Overlay
     const btnMenu = document.getElementById("btnMenu");
     const modalMenu = document.getElementById("modalMenu");
     const modalClose = document.getElementById("modalClose");
@@ -9,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function openModalOverlay() {
         modalMenu.classList.add("is-open");
         modalOverlay.classList.add("is-open");
-        modalMenu.setAttribute("inert");
+        modalMenu.removeAttribute("inert");
         // Tira o scroll enquanto o modal está aberto
         document.body.style.overflow = "hidden";
     }
@@ -31,4 +32,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fecha ao clicar no overlay (fora do modal)
     modalOverlay.addEventListener('click', () => closeModalOverlay());
+
+    // Carrossel de categorias dos produtos (Mobile)
+    const containerBoxes = document.querySelector("#categories-section-mobile #container-boxes-categories");
+    const categoryCards = Array.from(document.querySelectorAll("#categories-section-mobile .box-category"));
+    const btnPrev = document.querySelector("#btn-prev-categories");
+    const btnNext = document.querySelector("#btn-next-categories");
+    const totalCategories = categoryCards.length;
+
+    let currentIndex = 0;
+    let isTransition = false;
+
+    function updateCarousel() {
+        const cardWidth = 164;
+        containerBoxes.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    }
+
+    function nextCategory() {
+        if (isTransition) return null;
+        isTransition = true;
+        currentIndex = (currentIndex + 1) % totalCategories;
+        updateCarousel();
+        setTimeout(() => isTransition = false, 560);
+    }
+
+    function prevCategory() {
+        if (isTransition) return null;
+        isTransition = true;
+        currentIndex = (currentIndex - 1 + totalCategories) % totalCategories;
+        updateCarousel();
+        setTimeout(() => isTransition = false, 560);
+    }
+
+    btnPrev.addEventListener('click', () => prevCategory());
+    btnNext.addEventListener('click', () => nextCategory());
+
+    updateCarousel();
 });
