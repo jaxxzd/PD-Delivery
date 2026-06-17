@@ -817,11 +817,13 @@ figcaption {
 
 @media(min-width: 992px) {
     #categories-section-desktop {
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         padding-top: 16px;
+        overflow: hidden;
     }
 
     #categories-section-mobile {
@@ -854,6 +856,7 @@ figcaption {
     justify-content: flex-start;
     align-items: center;
     overflow: hidden;
+    position: relative;
 }
 
 #container-boxes-categories {
@@ -1125,7 +1128,7 @@ figcaption {
     height: 30px;
     border-radius: 8px;
     background-color: #DD5F35;
-    font-family: "Helvetica Neue";
+    font-family: "Helvetica-Neue";
     font-size: 10px;
     color: #FFFFFF;
     transition: .3s ease;
@@ -1151,7 +1154,7 @@ figcaption {
         height: 40px;
         border-radius: 8px;
         background-color: #DD5F35;
-        font-family: "Helvetica Neue";
+        font-family: "Helvetica-Neue";
         font-size: clamp(10px, 1vw, 14px);
         color: #FFFFFF;
         transition: .3s ease;
