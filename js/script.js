@@ -33,39 +33,28 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fecha ao clicar no overlay (fora do modal)
     modalOverlay.addEventListener('click', () => closeModalOverlay());
 
-    // Carrossel de categorias dos produtos (Mobile)
-    const containerBoxes = document.querySelector("#categories-section-mobile #container-boxes-categories");
-    const categoryCards = Array.from(document.querySelectorAll("#categories-section-mobile .box-category"));
-    const btnPrev = document.querySelector("#btn-prev-categories");
-    const btnNext = document.querySelector("#btn-next-categories");
-    const totalCategories = categoryCards.length;
+    // Scroll Animation
 
-    let currentIndex = 0;
-    let isTransition = false;
+    // Seleciona todos os elementos que serão animados no scroll
+    const scrollElements = document.querySelectorAll(".scroll-reveal");
 
-    function updateCarousel() {
-        const cardWidth = 164;
-        containerBoxes.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-    }
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            // entry.isIntersecting = true quer dizer que o elemento entrou na viewport
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
 
-    function nextCategory() {
-        if (isTransition) return null;
-        isTransition = true;
-        currentIndex = (currentIndex + 1) % totalCategories;
-        updateCarousel();
-        setTimeout(() => isTransition = false, 560);
-    }
+                entry.target.addEventListener('transitionend', () => {
+                    entry.target.style.transitionDelay = '0s';
+                }, { once: true });
 
-    function prevCategory() {
-        if (isTransition) return null;
-        isTransition = true;
-        currentIndex = (currentIndex - 1 + totalCategories) % totalCategories;
-        updateCarousel();
-        setTimeout(() => isTransition = false, 560);
-    }
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px'
+    });
 
-    btnPrev.addEventListener('click', () => prevCategory());
-    btnNext.addEventListener('click', () => nextCategory());
-
-    updateCarousel();
+    scrollElements.forEach(el => observer.observe(el));
 });
