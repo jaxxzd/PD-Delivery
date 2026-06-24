@@ -34,6 +34,16 @@ figcaption {
     height: 100%;
 }
 
+/* View Transition */
+
+@view-transition {
+    navigation: auto
+}
+
+::view-transition-group(:root) {
+    animation-duration: 2s;
+}
+
 /* Header */
 
 #header-delivery {
@@ -583,7 +593,7 @@ figcaption {
 
 .desc-product-delivery {
     width: 60.5%;
-    font-family: poppins, serif;
+    font-family: poppins, sans-serif;
     font-weight: 500;
     font-size: 8px;
     color: #FFFFFF;
@@ -593,7 +603,7 @@ figcaption {
 @media(min-width: 992px) {
     .desc-product-delivery {
         width: 60.5%;
-        font-family: poppins, serif;
+        font-family: poppins, sans-serif;
         font-weight: 330;
         font-size: 16px;
         color: #FFFFFF;
