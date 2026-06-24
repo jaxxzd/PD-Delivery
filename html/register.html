@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/auth.css">
+
+    <!-- ICONS | lucide/Font Awesome -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>PD Delivery | Cadastro</title>
+</head>
+
+<body class="body-auth">
+    <header class="header-auth">
+        <a href="/html/login.html">
+            <button class="btn-header" id="btn-back-register">
+                VOLTAR
+            </button>
+        </a>
+        <a href="/html/login.html">
+            <button class="btn-header" id="btn-login">
+                FAZER LOGIN
+            </button>
+        </a>
+    </header>
+
+    <main class="main-auth">
+        <div id="container-card-register">
+            <figure>
+                <img src="/Images/logo-PD-Delivery-Black.png" alt="Logo do PD Delivery"
+                    class="logo-pd-delivery-card-auth">
+                <figcaption>Logo do PD Delivery</figcaption>
+            </figure>
+
+            <h2 class="title-card-auth">
+                CRIE UMA CONTA
+            </h2>
+
+            <div class="box-input">
+                <label for="name-register" class="label-auth">NOME</label>
+                <div class="container-input">
+                    <input type="text" class="input-field" id="name-register" placeholder="Nome" required>
+                </div>
+            </div>
+
+            <div class="box-input">
+                <label for="email-register" class="label-auth">EMAIL</label>
+                <div class="container-input">
+                    <input type="email" class="input-field" id="email-register" placeholder="nome@exemplo.com" required>
+                </div>
+            </div>
+
+            <div class="box-input">
+                <label for="password-register" class="label-auth">SENHA</label>
+                <div class="container-input">
+                    <input type="password" class="input-field" id="password-register" placeholder="Senha" required>
+                    <div class="container-icon-eye">
+                        <i data-lucide="eye" id="eye-open"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-input">
+                <label for="tel-register" class="label-auth">TELEFONE</label>
+                <div class="container-input">
+                    <input type="tel" class="input-field" id="tel-register" placeholder="(00) 0000-0000" required>
+                </div>
+            </div>
+
+            <p class="desc-card-auth">
+                Faça login no PD Delivery para ofertas vantajosas e desfrutar da melhor forma os nossos produtos de
+                alta
+                qualidade!
+            </p>
+
+            <button id="btn-register">
+                CRIAR CONTA
+            </button>
+        </div>
+    </main>
+</body>
+
+<script src="/js/lucide-icons.js"></script>
+<script src="/js/script.js"></script>
+
+</html>
