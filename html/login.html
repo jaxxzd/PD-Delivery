@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Preload da imagem no body pra evitar flash branco -->
+    <link rel="preload" as="image" href="/Images/background-pages-aut.webp" type="image/webp">
     <!-- CSS -->
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/auth.css">
@@ -34,8 +36,10 @@
     <main class="main-auth">
         <div id="container-card-login">
             <figure>
-                <img src="/Images/logo-PD-Delivery-Black.png" alt="Logo do PD Delivery"
-                    class="logo-pd-delivery-card-auth">
+                <a href="/index.html">
+                    <img src="/Images/logo-PD-Delivery-Black.png" alt="Logo do PD Delivery"
+                        class="logo-pd-delivery-card-auth">
+                </a>
                 <figcaption>Logo do PD Delivery</figcaption>
             </figure>
 

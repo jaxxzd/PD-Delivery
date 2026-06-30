@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fav Icon -->
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -35,7 +37,7 @@
             <ul id="list-desordened-delivery">
                 <li class="scroll-reveal"><a href="index.html">INÍCIO</a></li>
                 <li class="scroll-reveal"><a href="html/menu.html">CARDÁPIO</a></li>
-                <li class="scroll-reveal"><a href="html/login.html">FAZER LOGIN</a></li>
+                <li class="scroll-reveal" id="btnLoginIndex"><a href="html/login.html">FAZER LOGIN</a></li>
             </ul>
 
             <div id="container-cart-delivery">
@@ -46,12 +48,12 @@
                 <span id="cart-quantity" class="scroll-reveal">0</span>
             </div>
 
-            <div id="container-user">
+            <div id="container-user" class="scroll-reveal">
                 <i data-lucide="user-round" id="icon-user"></i>
                 <p id="name-user">João Tavares</p>
             </div>
 
-            <div id="container-lojista">
+            <div id="container-lojista" class="scroll-reveal">
                 <i data-lucide="shield-user" id="icon-shield"></i>
                 <p id="name-lojista">Lojista Exemplo</p>
             </div>
@@ -374,6 +376,9 @@
     </footer>
 </body>
 
+<script type="module" src="/js/api.js"></script>
+<script type="module" src="/js/aut.js"></script>
+<script type="module" src="/js/route.js"></script>
 <script src="js/lucide-icons.js"></script>
 <script src="js/cardHeroSection.js"></script>
 <script src="js/script.js"></script>
