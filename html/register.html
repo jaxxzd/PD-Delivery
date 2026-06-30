@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fav Icon -->
+    <link rel="icon" type="image/x-icon" href="/Images/favicon.ico">
     <!-- CSS -->
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/auth.css">
@@ -34,8 +36,10 @@
     <main class="main-auth">
         <div id="container-card-register">
             <figure>
-                <img src="/Images/logo-PD-Delivery-Black.png" alt="Logo do PD Delivery"
-                    class="logo-pd-delivery-card-auth">
+                <a href="/index.html">
+                    <img src="/Images/logo-PD-Delivery-Black.png" alt="Logo do PD Delivery"
+                        class="logo-pd-delivery-card-auth">
+                </a>
                 <figcaption>Logo do PD Delivery</figcaption>
             </figure>
 
@@ -47,20 +51,22 @@
                 <label for="name-register" class="label-auth">NOME</label>
                 <div class="container-input">
                     <input type="text" class="input-field" id="name-register" placeholder="Nome" required>
-                </div>
+                </div autocomplete="off">
             </div>
 
             <div class="box-input">
                 <label for="email-register" class="label-auth">EMAIL</label>
                 <div class="container-input">
-                    <input type="email" class="input-field" id="email-register" placeholder="nome@exemplo.com" required>
+                    <input type="email" class="input-field" id="email-register" placeholder="nome@exemplo.com" required
+                        autocomplete="off">
                 </div>
             </div>
 
             <div class="box-input">
                 <label for="password-register" class="label-auth">SENHA</label>
                 <div class="container-input">
-                    <input type="password" class="input-field" id="password-register" placeholder="Senha" required>
+                    <input type="password" class="input-field" id="password-register" placeholder="Senha" required
+                        autocomplete="off">
                     <div class="container-icon-eye">
                         <i data-lucide="eye" id="eye-open"></i>
                     </div>
@@ -70,7 +76,8 @@
             <div class="box-input">
                 <label for="tel-register" class="label-auth">TELEFONE</label>
                 <div class="container-input">
-                    <input type="tel" class="input-field" id="tel-register" placeholder="(00) 0000-0000" required>
+                    <input type="tel" class="input-field" id="tel-register" placeholder="(00) 0000-0000" required
+                        autocomplete="off">
                 </div>
             </div>
 
@@ -87,7 +94,10 @@
     </main>
 </body>
 
+<script type="module" src="/js/api.js"></script>
+<script type="module" src="/js/aut.js"></script>
+<script type="module" src="/js/route.js"></script>
+<script type="module" src="/js/formValidation.js"></script>
 <script src="/js/lucide-icons.js"></script>
-<script src="/js/script.js"></script>
 
 </html>
