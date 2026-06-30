@@ -1,7 +1,7 @@
-const BASE_URLS = "https://69b83d57ffbcd0286097a0a9.mockapi.io/api";
+const BASE_URLS = "https://6a207fbfe96c1d13b5878397.mockapi.io";
 
-export async function get(resource, endpoint) {
-    const resp = await fetch(`${BASE_URLS[resource]}/${endpoint}`);
+export async function get(endpoint) {
+    const resp = await fetch(`${BASE_URLS}/${endpoint}`);
 
     if (!resp.ok) {
         throw new Error(`GET error: ${resp.status}`);
@@ -10,8 +10,8 @@ export async function get(resource, endpoint) {
     return await resp.json();
 }
 
-export async function post(resource, endpoint, data) {
-    const resp = await fetch(`${BASE_URLS[resource]}/${endpoint}`, {
+export async function post(endpoint, data) {
+    const resp = await fetch(`${BASE_URLS}/${endpoint}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -26,8 +26,8 @@ export async function post(resource, endpoint, data) {
     return await resp.json();
 }
 
-export async function put(resource, endpoint, data) {
-    const resp = await fetch(`${BASE_URLS[resource]}/${endpoint}`, {
+export async function put(endpoint, data) {
+    const resp = await fetch(`${BASE_URLS}/${endpoint}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
@@ -42,8 +42,8 @@ export async function put(resource, endpoint, data) {
     return await resp.json();
 }
 
-export async function del(resource, endpoint) {
-    const resp = await fetch(`${BASE_URLS[resource]}/${endpoint}`, {
+export async function del(endpoint) {
+    const resp = await fetch(`${BASE_URLS}/${endpoint}`, {
         method: "DELETE"
     });
 
