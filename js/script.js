@@ -57,4 +57,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     scrollElements.forEach(el => observer.observe(el));
+
+    // Modal Overlay para o usuário autenticado
+    const modalUser = document.getElementById("modalOverlayUser");
+    const ModalMenuUser = document.getElementById("ModalMenuUser");
+    const btnOpenModalUser = document.getElementById("container-user");
+
+    function openModalUser() {
+        ModalMenuUser.classList.add("is-open");
+        modalUser.classList.add("is-open");
+        ModalMenuUser.removeAttribute("inert");
+    }
+
+    function closeModalUser() {
+        ModalMenuUser.classList.remove("is-open");
+        modalUser.classList.remove("is-open");
+        ModalMenuUser.setAttribute("inert", "");
+    }
+
+    btnOpenModalUser.addEventListener("click", (e) => {
+        e.stopPropagation(); // impede que o clique já dispare o evento de fechar o modal
+        openModalUser();
+    });
+
+    document.addEventListener("click", (e) => {
+        const clickInsideModal = e.target.closest("#ModalMenuUser");
+        const clickOnUsername = e.target.closest("#container-user");
+
+        if (!clickInsideModal && !clickOnUsername) {
+            closeModalUser();
+        }
+    });
 });

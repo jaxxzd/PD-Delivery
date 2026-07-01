@@ -21,7 +21,7 @@ initPhoneMask();
 // Funcionalidade de ver e esconder os dígitos do input de senha
 
 function initViewPassword() {
-    const inputPassword = document.getElementById("password-register");
+    const inputPassword = document.getElementById("password-register") || document.getElementById("password-login");
     const containerEyeIcon = document.querySelector(".container-icon-eye");
     if (!inputPassword || !containerEyeIcon) return null;
 

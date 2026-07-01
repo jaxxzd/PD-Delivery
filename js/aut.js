@@ -9,7 +9,7 @@ function saveSession(user) {
     localStorage.setItem("pd-user", JSON.stringify(user));
 }
 
-function logOut() {
+export function logOut() {
     localStorage.removeItem("pd-user");
     window.location.href = "/index.html";
 }
@@ -124,6 +124,12 @@ export function updateHeader() {
         nameUser.textContent = displayName(user.name);
         btnLoginIndex.style.display = "none";
     }
+}
+
+const btnLogOut = document.getElementById("link-logout");
+
+if (btnLogOut) {
+    btnLogOut.addEventListener("click", () => logOut());
 }
 
 initRegister();
