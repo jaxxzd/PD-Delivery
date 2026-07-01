@@ -4,7 +4,7 @@ export async function get(endpoint) {
     const resp = await fetch(`${BASE_URLS}/${endpoint}`);
 
     if (!resp.ok) {
-        throw new Error(`GET error: ${resp.status}`);
+        throw new Error(`GET error: ${resp.status}. Autenticação indisponível, tente mais tarde`);
     }
 
     return await resp.json();
@@ -20,7 +20,7 @@ export async function post(endpoint, data) {
     });
 
     if (!resp.ok) {
-        throw new Error(`POST error: ${resp.status}`);
+        throw new Error(`POST error: ${resp.status}. Autenticação indisponível, tente mais tarde`);
     }
 
     return await resp.json();
@@ -36,7 +36,7 @@ export async function put(endpoint, data) {
     });
 
     if (!resp.ok) {
-        throw new Error(`PUT error: ${resp.status}`);
+        throw new Error(`PUT error: ${resp.status}. Autenticação indisponível, tente mais tarde`);
     }
 
     return await resp.json();
@@ -48,6 +48,6 @@ export async function del(endpoint) {
     });
 
     if (!resp.ok) {
-        throw new Error(`DELETE error: ${resp.status}`);
+        throw new Error(`DELETE error: ${resp.status}. Autenticação indisponível, tente mais tarde`);
     }
 }
