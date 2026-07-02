@@ -129,4 +129,4 @@ if (btnLogOut) {
 
 initRegister();
 initLogin();
-updateHeader();
+updateHeader(); 
