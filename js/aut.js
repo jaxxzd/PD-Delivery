@@ -127,6 +127,6 @@ if (btnLogOut) {
     btnLogOut.addEventListener("click", () => logOut());
 }
 
-initRegister();
+initRegister(); 
 initLogin();
 updateHeader(); 
