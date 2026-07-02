@@ -1,5 +1,4 @@
 import { get, post } from "./api.js";
-import { validateLogin, validateRegister, setError } from "./formValidation.js";
 
 export function getSession() {
     const data = localStorage.getItem("pd-user");
@@ -20,21 +19,29 @@ export async function initRegister() {
     if (!btnRegister) return null;
 
     btnRegister.addEventListener("click", async () => {
-        const isValid = await validateRegister();
-        if (!isValid) return null;
-
         const name = document.getElementById("name-register").value.trim();
         const email = document.getElementById("email-register").value.trim();
         const password = document.getElementById("password-register").value.trim();
         const phone = document.getElementById("tel-register").value.trim();
 
-        try {
-            const users = await get("/users");
-            const existUser = users.find(user => user.email === email);
+        if (!name) {
+            // Feedback visual
+        }
+        if (!email) {
+            // Feedback visual
+        }
+        if (!password) {
+            // Feedback visual
+        }
+        if (!phone) {
+            // Feedback visual
+        }
 
+        try {
+            const user = await get("/users");
+            const existUser = user.find(u => u.email === email);
             if (existUser) {
-                setError("email-register", "Email já existente");
-                return null;
+                // Feedback visual
             }
 
             const newUser = await post("/users", {
@@ -50,6 +57,7 @@ export async function initRegister() {
 
         } catch (error) {
             console.error("Erro ao se registrar", error);
+            // Feedback visual
         }
     });
 }
@@ -59,32 +67,29 @@ export function initLogin() {
     if (!btnLogin) return null;
 
     btnLogin.addEventListener("click", async () => {
-        const isValid = await validateLogin();
-        if (!isValid) return null;
-
         const email = document.getElementById("email-login").value.trim();
         const password = document.getElementById("password-login").value.trim();
 
         try {
             const users = await get("/users");
-            const user = users.find(user => user.email === email && user.password === password);
+            const user = users.find(u => u.email === email && u.password === password);
 
             if (!user) {
-                setError("email-login", "Email ou senha inválidos");
-                setError("password-login", "Email ou senha inválidos");
-                return null;
+                // Feedback visual
             }
 
             saveSession(user);
             window.location.href = "/index.html";
 
         } catch (error) {
-            console.error("Erro ao fazer login", error);
+            console.error("Erro ao se registrar", error);
+            // Feedback visual
         }
     });
+
 }
 
-export function displayName(fullName) {
+function displayName(fullName) {
     const parts = fullName.split(/\s+/);
 
     if (parts.length === 1) return parts[0];

@@ -1,5 +1,3 @@
-import { displayName, getSession } from "./aut.js";
-
 document.addEventListener('DOMContentLoaded', () => {
 
     // Modal Overlay
@@ -65,10 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const ModalMenuUser = document.getElementById("ModalMenuUser");
     const btnOpenModalUser = document.getElementById("container-user");
 
-    const nameModalUser = document.getElementById("nameModalUser");
-    const emailModalUser = document.getElementById("emailModalUser");
-
-
     function openModalUser() {
         ModalMenuUser.classList.add("is-open");
         modalUser.classList.add("is-open");
@@ -93,17 +87,5 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!clickInsideModal && !clickOnUsername) {
             closeModalUser();
         }
-
     });
-
-    // Função para atualizar os dados do usuário no modal
-    function updateDataUserModal() {
-        const user = getSession();
-        if (!user) return null;
-
-        nameModalUser.textContent = displayName(user.name) || "Usuário";
-        emailModalUser.textContent = user.email || "";
-    }
-
-    updateDataUserModal();
 });
