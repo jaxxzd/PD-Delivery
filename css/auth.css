@@ -102,7 +102,7 @@ figcaption {
 @media(min-width: 992px) {
     #container-card-login {
         width: 400px;
-        min-height: 500px;
+        min-height: 550px;
         padding: 22px;
     }
 }
@@ -137,8 +137,8 @@ figcaption {
 
 @media(min-width: 992px) {
     .logo-pd-delivery-card-auth {
-        width: 150px;
-        height: 120px;
+        width: 130px;
+        height: 100px;
     }
 }
 
@@ -179,7 +179,7 @@ figcaption {
 
 @media(min-width: 992px) {
     .desc-card-auth {
-        font-size: 14px;
+        font-size: 12px;
     }
 }
 
@@ -293,4 +293,33 @@ figcaption {
 #btn-login:hover,
 #btn-register:hover {
     opacity: .7;
+}
+
+/* Mensagem de erro | Feedback visual */
+
+.error-message {
+    height: 0px;
+    font-family: poppins, sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    color: #C20202;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.error-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media(min-width: 992px) {
+    .error-message {
+        font-size: 12px;
+    }
+}
+
+.input-error {
+    border-bottom: 1px solid #C20202;
+    transition: .3s ease;
 }
